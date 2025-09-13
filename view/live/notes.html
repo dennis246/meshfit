@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <title>notes</title>
+    <style>
+        body {
+            font-family: consolas;
+            font-weight: 500;
+
+        }
+    </style>
+
+    <script>
+
+        function postContent() {
+
+            console.log("inside PostContent fn");
+            var postTo = '/App1/notes1';
+            var x = document.getElementById('container');
+            console.log(x);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", postTo, true);
+            //xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(x.outerHTML);
+        }
+
+        async function readFileAsText(file) {
+            return file.text();
+        }
+
+        function uploadContent() {
+
+            const fileInput = document.getElementById("file");
+            var filesList = fileInput.files;
+            console.log(filesList);
+
+            const fs = readFileAsText(filesList[0]); 
+            var fsEnc = btoa(fs);
+            console.log(fs);
+            console.log(fsEnc);
+
+            const request1 = new Request("/App1/notes", {
+                method: "POST",
+                body: fs,
+            });
+        }
+
+        function initiateFileAdd() {
+           /*  console.log("inside initiateFileAdd")
+            const request1 = new Request("/App1/notes", {
+                method: "POST",
+                body: 'javaCmd::fileAdd',
+            }); */
+
+
+            var postTo = '/App1/notes1';
+            var x = 'javaCmd::fileAdd';
+            console.log(x);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", postTo, true);
+            xhr.send(x);
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <form method="post" enctype="multipart/form-data">
+
+        <div id="container">
+            <main>
+                <p>Upload a file</p>
+                <p>
+                    <label for="file">File to upload</label>
+                    <input type="file" id="file"
+                        accept=".jpg, .jpeg, .png, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+                </p>
+                <!-- <p>
+                    <progress></progress>
+                </p> -->
+                <p>
+                    <output></output>
+                </p>
+                <p>
+                    <button disabled id="abort">Abort</button>
+                    <button type="button" onclick="uploadContent()">Upload </button>
+
+                    <button type="button" onclick="initiateFileAdd()">Add File</button>
+                </p>
+            </main>
+
+            <img src="#{notesCtrl.uploadedImage}" alt="uploadedImage" />
+
+            
+        </div>
+    </form>
+
+</body>
+
+</html>

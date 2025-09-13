@@ -1,0 +1,49 @@
+{
+    "page1" : {
+        "name" : "page1",
+        "location" : "/web/view/templates/page1.html",
+        "controller" : "web.controller.page.Page1Controller",
+        "index" : 1,
+        "render" : true
+    },
+
+    "page2" : {
+        "name" : "page2",
+        "location" : "/web/view/templates/page2.html",
+        "controller" : "web.controller.page.Page2Controller",
+        "index" : 2,
+        "render" : true
+    },
+
+    "notes" : {
+        "name" : "notes",
+        "location" : "/web/view/templates/notes.html",
+        "controller" : "web.controller.page.NotesController",
+        "index" : 3,
+        "render" : true
+    },
+
+    "simplenote" : {
+        "name" : "simplenote",
+        "location" : "/web/view/templates/simplenote.html",
+        "controller" : "web.controller.page.SimpleNoteController",
+        "index" : 4,
+        "render" : true
+    },
+
+    "grid" : {
+        "name" : "grid",
+        "location" : "/web/view/templates/ipgrid.html",
+        "controller" : "web.controller.page.GridController",
+        "index" : 5,
+        "render" : true 
+    },
+
+    "items" : {
+        "name" : "items",
+        "location" : "/web/view/templates/items.html",
+        "controller" : "web.controller.page.ItemsController",
+        "index" : 6,
+        "render" : true 
+    }
+}
