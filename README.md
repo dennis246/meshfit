@@ -1,0 +1,1 @@
+a java based web framework inspired from solid java ee frameworks (JSF page validation and SpringBoot like navigation). works barely with lot of difficulties and code repetations. this project is uploaded only for reference if at all any part of it is useful
