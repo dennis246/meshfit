@@ -51,7 +51,7 @@ public class TxtProc {
 
     static Map<String, Object> utilInfo = new LinkedHashMap<>();
 
-    static int mainSeekPos = 0; // i.e col
+    static int mainSeekPos = 0;
     static Integer[] mainSeekPosHistory = new Integer[0];
 
     static Integer[] mainSeekPosStops = new Integer[0];
@@ -1812,5 +1812,6 @@ public class TxtProc {
 
         return res;
     }
+
 
 }
